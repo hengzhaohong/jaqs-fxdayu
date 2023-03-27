@@ -36,7 +36,7 @@ setup(
     author_email='public@fxdayu.com',
     license='Apache License v2',
     package_data={'': ['*.csv', '*.txt']},
-    url='https://github.com/xingetouzi/jaqs_fxdayu',
+    url='https://github.com/hengzhaohong/jaqs_fxdayu',
     keywords="quantiatitive trading research finance",
     install_requires=requirements,
     description='Open source quantitative research&trading framework, base on https://github.com/quantOS-org/JAQS',
