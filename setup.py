@@ -1,9 +1,6 @@
 import codecs
 
-try:
-    from pip._internal.req import parse_requirements # for pip >= 10
-except ImportError:
-    from pip.req import parse_requirements
+from pkg_resources import parse_requirements
 
 from os.path import dirname, join
 from setuptools import (
@@ -22,10 +19,8 @@ def version():
         return f.read().decode('ascii').strip()
 
 
-try:
-    requirements = [str(ir.req) for ir in parse_requirements("requirements.txt", session=False)]
-except Exception as e:
-    requirements = [str(ir.requirement) for ir in parse_requirements("requirements.txt", session=False)]
+with open('requirements.txt') as f:
+    requirements = [str(req) for req in parse_requirements(f.read())]
 
 
 setup(
